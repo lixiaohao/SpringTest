@@ -15,6 +15,7 @@
                            http://www.springframework.org/schema/context
                            http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <aop:aspectj-autoproxy />
+    <!--配置扫描路径-->
     <context:component-scan base-package="com.lixiaohao" />
 
     <!--注入映射的类-->
@@ -22,16 +23,20 @@
     <!--<context:property-placeholder location="classpath:config.properties"/>-->
 
     <!--此配置等同于上面面的配置-->
-    <bean id="configurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="locations">
+    <bean id="configurers" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations" >
             <list>
                 <value>classpath:config.properties</value>
             </list>
         </property>
+        <property name="fileEncoding" value="utf-8" />
     </bean>
+
 
 
     <!--下面可以不加，如不加入，则必须在对应的bean上加入注释-->
     <bean id="configTest" class="com.lixiaohao.placeholder.ConfigTest">
     </bean>
+
+    <!--<import resource = "classpath*:spring-servlet.xml"/>-->
 </beans>

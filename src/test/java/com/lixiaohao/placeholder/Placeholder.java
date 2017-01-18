@@ -13,7 +13,13 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Placeholder {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("/appContext.xml");
+
         ConfigTest configTest = (ConfigTest)context.getBean(ConfigTest.class);
+
         System.out.println("id:"+configTest.getId()+"   name:"+configTest.getName());
+        configTest.setId(2);
+        configTest.setName("merray");
+        System.out.println("id:"+configTest.getId()+"   name:"+configTest.getName());
+
     }
 }
