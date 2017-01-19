@@ -12,7 +12,6 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @Create 2017-01-17 14:54
  * @Company
  */
-@Component
 @XmlRootElement
 public class XmlReturnMessage {
     private String name;

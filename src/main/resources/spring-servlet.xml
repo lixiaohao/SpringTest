@@ -19,22 +19,21 @@
 <!-- 启用spring mvc 注解 -->
 	<!--<context:annotation-config />-->
 	<mvc:annotation-driven/>
-        <!-- 设置使用注解的类所在的jar包 -->
-<context:component-scan base-package="com.lixiaohao.messageconverter" />
-	<context:component-scan base-package="com.lixiaohao.messageconverter.model" />
 
-        <!-- 完成请求和注解POJO的映射 -->
+		<!--配置扫描路径-->
+	<context:component-scan base-package="com.lixiaohao.messageconverter" />
 
-	<bean
-			class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+
+<!--
+	&lt;!&ndash; <mvc:annotation-driven/> 注解包含该内容 &ndash;&gt;
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
 		<property name="messageConverters">
 			<list>
 				<ref bean="mappingJackson2HttpMessageConverter" />
 			</list>
 		</property>
 	</bean>
-	<bean id="mappingJackson2HttpMessageConverter"
-		  class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+	<bean id="mappingJackson2HttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
 		<property name="supportedMediaTypes">
 			<list>
 				<value>text/html;charset=UTF-8</value>
@@ -42,7 +41,7 @@
 				<value>application/json;charset=UTF-8</value>
 			</list>
 		</property>
-	</bean>
+	</bean>-->
 
 
     <!--&lt;!&ndash; 自动view装配 &ndash;&gt;-->
